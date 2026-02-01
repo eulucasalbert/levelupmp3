@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Level Up Audio</title>
 </head>
-<body style="background: transparent;">
 
-<audio id="levelup" preload="auto">
-  <source src="levelup.mp3" type="audio/mpeg">
-</audio>
+<body style="margin:0; background:transparent;">
 
-<script>
-const audio = document.getElementById("levelup");
+  <audio id="levelup-audio" preload="auto">
+    <source src="levelup.mp3" type="audio/mpeg">
+  </audio>
 
-audio.volume = 1.0;
+  <script>
+    const audio = document.getElementById("levelup-audio");
+    audio.volume = 1.0;
 
-// força play sempre que a página carregar
-window.onload = () => {
-  audio.currentTime = 0;
-  audio.play().catch(err => {
-    console.log("Autoplay bloqueado:", err);
-  });
-};
-</script>
+    window.onload = () => {
+      audio.currentTime = 0;
+      audio.play().catch(err => {
+        console.log("Autoplay bloqueado:", err);
+      });
+    };
+  </script>
 
 </body>
 </html>
