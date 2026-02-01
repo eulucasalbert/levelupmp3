@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body style="background: transparent;">
+
+<audio id="levelup" preload="auto">
+  <source src="levelup.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-const audio = new Audio("https://levelupmp3.vercel.app/levelup.mp3");
-audio.volume = 1;
-audio.play();
+const audio = document.getElementById("levelup");
+
+audio.volume = 1.0;
+
+// força play sempre que a página carregar
+window.onload = () => {
+  audio.currentTime = 0;
+  audio.play().catch(err => {
+    console.log("Autoplay bloqueado:", err);
+  });
+};
 </script>
+
 </body>
 </html>
